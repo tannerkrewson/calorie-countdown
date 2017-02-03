@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h2>Calorie Countdown</h2>
+        <p class="lead">Track your calories for a single meal.</p>
+        <br>
+
+        <div class="start-page">
+          <div class="row cal-input">
+            <div class="col-sm-4"></div>
+            <div class="form-group col-sm-4">
+              <label for="">Total calories for this meal:</label>
+              <input type="text" class="form-control" id="total-calories">
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+          <button type="button" class="btn btn-secondary" id="start-button">Start</button>
+        </div>
+
+        <div class="calculator-page">
+          <h4>Calories left to eat:</h4>
+          <h2 id="calories-left">error</h2>
+          <br>
+          <div class="row cal-input">
+            <div class="col-sm-4"></div>
+            <div class="form-group col-sm-4">
+              <label for="">Calories for this plate:</label>
+              <input type="text" class="form-control" id="plate-calories">
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+          <button type="button" class="btn btn-secondary" id="reset-button">Reset</button>
+          <button type="button" class="btn btn-secondary" id="add-button">Add</button>
+        </div>
+
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
