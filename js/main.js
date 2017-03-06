@@ -24,8 +24,10 @@ $("#add-button").click(function () {
 });
 
 $("#reset-button").click(function () {
-  $(".calculator-page").hide();
-  $(".start-page").show();
+  if (confirm("Are you sure you would like to reset?")) {
+    $(".calculator-page").hide();
+    $(".start-page").show();
+  }
 });
 
 $(document).ready(function(){
