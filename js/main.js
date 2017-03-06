@@ -29,13 +29,16 @@ $("#reset-button").click(function () {
 });
 
 $(document).ready(function(){
-    $('#total-calories').keypress(function(e){
-      if(e.keyCode==13)
-      $('#start-button').click();
+    $('#total-calories').keydown(function(e){
+      if(e.keyCode==13 || e.keyCode==9){
+        $('#start-button').click();
+      }
+
     });
-    $('#plate-calories').keypress(function(e){
-      if(e.keyCode==13)
-      $('#add-button').click();
+    $('#plate-calories').keydown(function(e){
+      if(e.keyCode==13 || e.keyCode==9) {
+        $('#add-button').click();
+      }
     });
 });
 
