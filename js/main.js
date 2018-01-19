@@ -1,3 +1,6 @@
+var caloriesLeft = Cookies.get('calories-left');
+if (!caloriesLeft) caloriesLeft = 0;
+
 $("#start-button").click(function () {
   // get the user's inputted total calorie number from the textbox
   var totalCaloriesFromTextBox = parseInt($("#total-calories").val());
@@ -14,13 +17,16 @@ $("#add-button").click(function () {
   // get the user's inputted cal count for this plate from the textbox
   var plateCaloriesFromTextBox = $("#plate-calories").val();
 
-  //clear the number they entered
+  // clear the number they entered
   $("#plate-calories").val("");
 
-  //check if it is a valid number
+  // check if it is a valid number
   if (!isNaN(plateCaloriesFromTextBox) && plateCaloriesFromTextBox !== "") {
     subtractCalories(parseInt(plateCaloriesFromTextBox));
   }
+
+  // place cursor back into input
+  $('#total-calories').focus();
 });
 
 $("#reset-button").click(function () {
@@ -31,6 +37,9 @@ $("#reset-button").click(function () {
 });
 
 $(document).ready(function(){
+    if (caloriesLeft) {
+        $('#start-button').click();
+    }
     $('#total-calories').keydown(function(e){
       if(e.keyCode==13 || e.keyCode==9){
         $('#start-button').click();
@@ -44,9 +53,12 @@ $(document).ready(function(){
     });
 });
 
-var caloriesLeft = 0;
+
+
 function setCalories (newCalorieAmount) {
   caloriesLeft = newCalorieAmount;
+
+  Cookies.set('calories-left', caloriesLeft);
 
   //display that number in the counter
   $("#calories-left").text(caloriesLeft);
