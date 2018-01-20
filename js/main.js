@@ -1,5 +1,14 @@
-var caloriesLeft = Cookies.get('calories-left');
-if (!caloriesLeft) caloriesLeft = 0;
+
+var caloriesLeft = parseInt(Cookies.get('calories-left'));
+
+console.log(caloriesLeft);
+
+if (caloriesLeft > 0) {
+    $("#total-calories").val(caloriesLeft);
+    $('#start-button').click();
+} else {
+    caloriesLeft = 0;
+}
 
 $("#start-button").click(function () {
   // get the user's inputted total calorie number from the textbox
@@ -10,6 +19,9 @@ $("#start-button").click(function () {
     $(".start-page").hide();
     $(".calculator-page").show();
   }
+
+  // place cursor into input
+  $('#plate-calories').focus();
 
 });
 
@@ -26,7 +38,7 @@ $("#add-button").click(function () {
   }
 
   // place cursor back into input
-  $('#total-calories').focus();
+  $('#plate-calories').focus();
 });
 
 $("#reset-button").click(function () {
@@ -58,7 +70,7 @@ $(document).ready(function(){
 function setCalories (newCalorieAmount) {
   caloriesLeft = newCalorieAmount;
 
-  Cookies.set('calories-left', caloriesLeft);
+  Cookies.set('calories-left', caloriesLeft, {expires: 1/12});
 
   //display that number in the counter
   $("#calories-left").text(caloriesLeft);
