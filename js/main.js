@@ -1,8 +1,6 @@
 
 var caloriesLeft = parseInt(Cookies.get('calories-left'));
 
-console.log(caloriesLeft);
-
 if (caloriesLeft > 0) {
     $("#total-calories").val(caloriesLeft);
     $('#start-button').click();
